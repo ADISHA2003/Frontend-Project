@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,78 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Form</title>
     <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Familjen Grotesk', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .popup {
-            background-color: white;
-            padding: 20px;
-            border: 2px solid black;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 0px;
-        }
-
-        .popup h2 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .popup input, .popup textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid black;
-            border-radius: 0px;
-            font-family: 'Familjen Grotesk', sans-serif;
-            font-size: 16px;
-        }
-
-        .popup input:focus, .popup textarea:focus {
-            outline: none;
-            border-color: black;
-        }
-
-        .popup button {
-            width: 100%;
-            padding: 12px;
-            background-color: black;
-            color: white;
-            border: 1px solid black;
-            border-radius: 0px;
-            font-family: 'Familjen Grotesk', sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .popup button:hover {
-            background-color: white;
-            color: black;
-            border: 1px solid black;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        input[type="radio"] {
-            margin-right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
 
@@ -103,29 +31,6 @@
         </form>
     </div>
 
-    <script>
-        function submitForm(event) {
-            event.preventDefault();
-
-            const nameField = document.querySelector('input[type="text"]');
-            const genderValue = document.querySelector('input[name="gender"]:checked').value;
-            const mobileNumber = document.querySelector('input[type="tel"]');
-            const emailField = document.querySelector('input[type="email"]');
-            const appointmentDate = document.querySelector('input[type="date"]');
-            const messageField = document.querySelector('textarea');
-
-            const name = encodeURIComponent(nameField.value);
-            const gender = encodeURIComponent(genderValue);
-            const number = encodeURIComponent(mobileNumber.value);
-            const email = encodeURIComponent(emailField.value);
-            const date = encodeURIComponent(appointmentDate.value);
-            const message = encodeURIComponent(messageField.value);
-
-            const whatsappMessage = `Name: ${name}%0AGender: ${gender}%0AMobile No.: ${number}%0AEmail: ${email}%0AAppointment Date: ${date}%0AMessage: ${message}`;
-
-            window.open(`https://api.whatsapp.com/send?phone=9289665096&text=${whatsappMessage}`, '_blank');
-        }
-    </script>
-
+    <script src="script.js"></script> 
 </body>
 </html>
