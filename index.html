@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend Project</title>
+    <title>Send form details to whatsapp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple frontend project.</p>
+    <div class="popup"></div>
+        <h2>Contact Form</h2>
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Name" required />
+            <label for="gender">Gender</label>
+            <div style="display: flex; flex-direction: row;">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                <input type="radio" id="other" name="gender" value="other">
+                <label for="other">Other</label>
+            </div>
+            <input type="tel" placeholder="Mobile No." required maxlength="10" pattern="[0-9]{10}" />
+            <input type="email" placeholder="Email" required />
+            <label for="appointment-date">Appointment Date</label>
+            <input type="date" id="appointment-date" name="appointment-date">
+            <textarea placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
